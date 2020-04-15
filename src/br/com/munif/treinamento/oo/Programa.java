@@ -11,7 +11,7 @@ import br.com.munif.treinamento.oo.heranca.C;
 // private só acessível do próprio atefato
 // public acessível de todos os atefatos
 // NADA (package) acessível apenas do pacote
-// protected  (mistério)
+// protected  acessível no mesmo pacote e em suas subclasses
 
 
 
