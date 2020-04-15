@@ -1,4 +1,4 @@
-package br.com.munif.treinamento.oo; //ainda não explicado
+package br.com.munif.treinamento.oo.entidades; //ainda não explicado
 
 /**
  * Classe que representa um ventilador padrão
@@ -9,24 +9,23 @@ package br.com.munif.treinamento.oo; //ainda não explicado
 public class Ventilador {
 	
 	
-	
 	/**
 	 * Representa Velocidade
 	 */
-	private int velocidade; //Atributo
+	protected int velocidade; //Atributo
 	
 
-	Ventilador() { //Método Construtor
+	public Ventilador() { //Método Construtor
 		System.out.println ("Criando ventilador");
 		botao1();
 	}
 
-	Ventilador(int velocidadeIncial) { //Método Construtor
+	public Ventilador(int velocidadeIncial) { //Método Construtor
 		System.out.println ("Criando ventilador");
 		setVelocidade(velocidadeIncial);
 	}
 
-	Ventilador(String velocidadeIncial) { //Método Construtor
+	public Ventilador(String velocidadeIncial) { //Método Construtor
 		System.out.println ("Criando ventilador");
 		setVelocidade(Integer.parseInt(velocidadeIncial));
 	}
@@ -53,32 +52,34 @@ public class Ventilador {
 	/**
 	 * Desliga o ventilador
 	 */
-	void desligar(){ //Método
+	public void desligar(){ //Método
 		this.velocidade=0;
 	}
 
 	/**
 	 * Botão 1, representa o apertar desse botão
 	 */
-	void botao1(){ //Método
+	public void botao1(){ //Método
 		this.velocidade=1;
 	}
 	/**
 	 * Botão 2
 	 */
-	void botao2(){ //Método
+	public void botao2(){ //Método
 		this.velocidade=2;
 	}
 	/**
 	 * Botão 3
 	 */
-	void botao3(){ //Método
+	public void botao3(){ //Método
 		this.velocidade=3;
 	}
 	/**
 	 * mostra o valor da velocidade
 	 */
-	void mostraVelocidade() { //Método que não retorna nada
+	//SHOW USAGES
+	public void mostraStatus() { //Método que não retorna nada
+		System.out.println ("Médoto da classe Ventilador");
 		System.out.println ("A velocidade vale:"+this.velocidade);
 	}
 

@@ -5,25 +5,44 @@
 
 package br.com.munif.treinamento.oo;
 
+import br.com.munif.treinamento.oo.entidades.*;
+import br.com.munif.treinamento.oo.heranca.C;
+
+// private só acessível do próprio atefato
+// public acessível de todos os atefatos
+// NADA (package) acessível apenas do pacote
+// protected  (mistério)
+
+
+
+
 public class Programa {
+	
+	public static void mainHerancaConstrutores(String[] args) {
+		C c=new C();
+	}
 		
 	public static void main(String[] args) {  //Começa aqui
 		Ventilador ventiladorDoMunif;
 		ventiladorDoMunif=new Ventilador();
-		ventiladorDoMunif.mostraVelocidade();
+		ventiladorDoMunif.mostraStatus();
 		ventiladorDoMunif.botao3();
-		ventiladorDoMunif.mostraVelocidade();
+		ventiladorDoMunif.mostraStatus();
 		System.out.println ("O Custo é de "+(5*ventiladorDoMunif.getVelocidade()));
 		ventiladorDoMunif.setVelocidade(0);
-		ventiladorDoMunif.mostraVelocidade();
+		ventiladorDoMunif.mostraStatus();
 		ventiladorDoMunif.setVelocidade(-5);
 		
 		ventiladorDoMunif.setVelocidade("5");
-		ventiladorDoMunif.mostraVelocidade();
-		
-		Ventilador v1=new Ventilador();    //Sobrecarga
-		Ventilador v2=new Ventilador(2);   //Sobrecarga
-		Ventilador v3=new Ventilador("3"); //Sobrecarga
+		ventiladorDoMunif.mostraStatus();
+
+		VentiladorPlus vp=new VentiladorPlus();
+		vp.botao1();
+		vp.setGira(true);
+		vp.mostraStatus();
+		System.out.println ("Ventilador Plus "+vp.isGira()+" está girando");
+		vp.mostraStatus();
+
     }
 		
 
