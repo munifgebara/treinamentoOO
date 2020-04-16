@@ -7,5 +7,10 @@ public class B extends A{
 		          //não precisava
 		System.out.println ("Construtor com parâmetros Inteiro de B");
 	}
+	
+	public void metodo() {
+		System.out.println ("Metodo de B");
+	}
+
 
 }

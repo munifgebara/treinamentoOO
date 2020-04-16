@@ -6,6 +6,8 @@
 package br.com.munif.treinamento.oo;
 
 import br.com.munif.treinamento.oo.entidades.*;
+import br.com.munif.treinamento.oo.heranca.A;
+import br.com.munif.treinamento.oo.heranca.B;
 import br.com.munif.treinamento.oo.heranca.C;
 
 // private só acessível do próprio atefato
@@ -18,11 +20,17 @@ import br.com.munif.treinamento.oo.heranca.C;
 
 public class Programa {
 	
-	public static void mainHerancaConstrutores(String[] args) {
-		C c=new C();
+	public static void main(String ...args) {
+		br.com.munif.treinamento.oo.abstratas.Programa.comeco();
+	}
+	
+	
+	public static void mainOOPs(String[] args) {
+		A c=new C();
+		c.metodo();
 	}
 		
-	public static void main(String[] args) {  //Começa aqui
+	public static void mainOutrosss(String[] args) {  //Começa aqui
 		Ventilador ventiladorDoMunif;
 		ventiladorDoMunif=new Ventilador();
 		ventiladorDoMunif.mostraStatus();

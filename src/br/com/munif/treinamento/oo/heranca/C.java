@@ -11,6 +11,12 @@ public class C extends B{
 		super(1);
 		System.out.println ("Construtor com parâmetros Inteiro de C");
 	}
+	
+	public void metodo() {
+		metodo();
+		System.out.println ("Metodo de C");
+	}
+
 
 	
 }
