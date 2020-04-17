@@ -39,36 +39,23 @@ import br.com.munif.treinamento.oo.heranca.C;
 public class Programa {
 	
 	public static void main(String ...args) {
-		
+		Academico m= new Academico(7366,"Munif");
 		Set<Academico> academicos=new HashSet<>();
-		academicos.add(new Academico(7366,"Munif"));
+		academicos.add(m);
 		academicos.add(new Academico(42149,"Cláudia"));
 		academicos.add(new Academico(54264,"Antônio"));
-
 		Disciplina php=new Disciplina("PHP");
 		Set<Disciplina> disciplinas=new HashSet<>();
 		disciplinas.add(php);
 		disciplinas.add(new Disciplina("Java"));
-		
-		
 		Turma t1=new Turma("T1", php);
-		
 		t1.getAlunos().addAll(academicos);
-		
-		
 		System.out.println("Academicos:"+academicos);
 		System.out.println("Disciplinas:"+disciplinas);
-
-		
 		System.out.println (t1);
-		
-		
-		
-		
-		
-		
-		
-		
+		t1.getAlunos().remove(m);
+		System.out.println (t1);
+		System.out.println("Academicos:"+academicos);
 	}
 	
 	
