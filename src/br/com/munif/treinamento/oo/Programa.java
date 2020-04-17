@@ -15,6 +15,13 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+import org.hamcrest.CoreMatchers;
+
+import br.com.munif.treinamento.oo.abstratas.Aluno;
+import br.com.munif.treinamento.oo.abstratas.Coordenador;
+import br.com.munif.treinamento.oo.academico.Academico;
+import br.com.munif.treinamento.oo.academico.Disciplina;
+import br.com.munif.treinamento.oo.academico.Turma;
 import br.com.munif.treinamento.oo.entidades.*;
 import br.com.munif.treinamento.oo.heranca.A;
 import br.com.munif.treinamento.oo.heranca.B;
@@ -32,6 +39,43 @@ import br.com.munif.treinamento.oo.heranca.C;
 public class Programa {
 	
 	public static void main(String ...args) {
+		
+		Set<Academico> academicos=new HashSet<>();
+		academicos.add(new Academico(7366,"Munif"));
+		academicos.add(new Academico(42149,"Cláudia"));
+		academicos.add(new Academico(54264,"Antônio"));
+
+		Disciplina php=new Disciplina("PHP");
+		Set<Disciplina> disciplinas=new HashSet<>();
+		disciplinas.add(php);
+		disciplinas.add(new Disciplina("Java"));
+		
+		
+		Turma t1=new Turma("T1", php);
+		
+		t1.getAlunos().addAll(academicos);
+		
+		
+		System.out.println("Academicos:"+academicos);
+		System.out.println("Disciplinas:"+disciplinas);
+
+		
+		System.out.println (t1);
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	public static void mainMaps(String ...args) {
+		
+		Map<Aluno,Set<Coordenador>> mapao;
+		
 		Map<String,Object> mapa=new HashMap<String,Object>();
 		
 		mapa.put("um", 1);
