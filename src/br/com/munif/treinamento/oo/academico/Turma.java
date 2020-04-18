@@ -3,6 +3,9 @@ package br.com.munif.treinamento.oo.academico;
 import java.util.HashSet;
 import java.util.Set;
 
+import br.com.munif.treinamento.oo.NegocioException;
+import br.com.munif.treinamento.oo.TurmaCheiaException;
+
 public class Turma {
 	
 	private String codigo;
@@ -17,14 +20,31 @@ public class Turma {
 		alunos=new HashSet<>();
 	}
 	
-	public void matriculaAcademico(Academico a) {
-		this.alunos.add(a);
-		a.getTurmas().add(this);
+	public int getQuantidade() {
+		return alunos.size();
 	}
 	
-	public void removerAcademico(Academico a) {
-		this.alunos.remove(a);
-		a.getTurmas().remove(this);
+	public void matriculaAcademico(Academico a) throws TurmaCheiaException {
+		if (this.alunos.size()<2) {
+			this.alunos.add(a);
+			a.getTurmas().add(this);
+		}
+		else {
+			throw new TurmaCheiaException("Não foi possível matricular o "+
+		a.getNome()+" pois a turma "+this+" está com "+this.alunos.size());
+		}
+	}
+	
+	public void removerAcademico(Academico a) throws NegocioException {
+		if (this.alunos.contains(a)) {
+			this.alunos.remove(a);
+			a.getTurmas().remove(this);
+		}
+		else{
+			String mensagem="O "+a.getNome()+" não está  nessa turma";
+			throw new NegocioException(mensagem);
+		}
+		
 	}
 	
 	public String toString() {

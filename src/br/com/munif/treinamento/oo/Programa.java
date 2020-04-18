@@ -50,10 +50,17 @@ public class Programa {
 		disciplinas.add(java);
 		Turma t1 = new Turma("T1", php);
 		Turma t2 = new Turma("T2", java);
-		t1.matriculaAcademico(a);
-		t1.matriculaAcademico(c);
-		t2.matriculaAcademico(c);
-		t2.matriculaAcademico(m);
+		try {
+			t1.matriculaAcademico(a);
+			t1.matriculaAcademico(c);
+			t2.matriculaAcademico(c);
+			t2.matriculaAcademico(m);
+			t2.matriculaAcademico(a);
+
+			t2.removerAcademico(a);
+		} catch (TurmaCheiaException | NegocioException e) {
+			System.out.println(e.getMessage());
+		}
 
 		System.out.println(t1);
 		System.out.println(t2);
