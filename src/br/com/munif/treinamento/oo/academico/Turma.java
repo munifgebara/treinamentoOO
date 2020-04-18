@@ -17,19 +17,20 @@ public class Turma {
 		alunos=new HashSet<>();
 	}
 	
+	public void matriculaAcademico(Academico a) {
+		this.alunos.add(a);
+		a.getTurmas().add(this);
+	}
+	
+	public void removerAcademico(Academico a) {
+		this.alunos.remove(a);
+		a.getTurmas().remove(this);
+	}
 	
 	public String toString() {
 		return "Turma "+codigo+" "+disciplina+" "+alunos;
 	}
 	
-
-	public Set<Academico> getAlunos() {
-		return alunos;
-	}
-
-	public void setAlunos(Set<Academico> alunos) {
-		this.alunos = alunos;
-	}
 
 	public Disciplina getDisciplina() {
 		return disciplina;
